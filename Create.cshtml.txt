@@ -1,0 +1,19 @@
+@model Project.Models.Category
+
+@{
+    ViewBag.Title = "Create Category";
+}
+
+<h2>Create Category</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.CategoryName)
+        @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CategoryName)
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Create</button>
+}

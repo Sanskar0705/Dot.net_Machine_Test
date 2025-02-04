@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <!-- Add any custom config sections here -->
+  </configSections>
+  
+  <connectionStrings>
+    <add name="DefaultConnection" 
+         connectionString="Data Source=.;Initial Catalog=YourDbName;Integrated Security=True" 
+         providerName="System.Data.SqlClient" />
+  </connectionStrings>
+
+  <appSettings>
+    <!-- Add any custom app settings here -->
+  </appSettings>
+
+  <system.web>
+    <compilation debug="true" targetFramework="4.7.2" />
+    <httpRuntime targetFramework="4.7.2" />
+    <authentication mode="None" />
+  </system.web>
+
+  <system.webServer>
+    <modules>
+      <remove name="WebDAVModule" />
+    </modules>
+  </system.webServer>
+</configuration>
