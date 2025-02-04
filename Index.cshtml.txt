@@ -1,29 +1,33 @@
-@model IEnumerable<Project.Models.Category>
+@model IEnumerable<Project.Models.Product>
 
 @{
-    ViewBag.Title = "Category List";
+    ViewBag.Title = "Product List";
 }
 
-<h2>Category List</h2>
+<h2>Product List</h2>
 
 <p>
-    @Html.ActionLink("Create New Category", "Create")
+    @Html.ActionLink("Create New Product", "Create")
 </p>
 
 <table class="table">
     <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
         <th>Category ID</th>
         <th>Category Name</th>
         <th>Actions</th>
     </tr>
 
-@foreach (var category in Model) {
+@foreach (var product in Model) {
     <tr>
-        <td>@category.CategoryId</td>
-        <td>@category.CategoryName</td>
+        <td>@product.ProductId</td>
+        <td>@product.ProductName</td>
+        <td>@product.CategoryId</td>
+        <td>@product.Category.CategoryName</td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = category.CategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = category.CategoryId })
+            @Html.ActionLink("Edit", "Edit", new { id = product.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = product.ProductId })
         </td>
     </tr>
 }
